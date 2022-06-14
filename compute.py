@@ -174,40 +174,6 @@ def compute_credit(
 
     plt.show()
 
-    """
-    # au bout d'un an (26 versements) on a rembourse +20k
-    capital_restant = starting_capital - results[payments_per_year - 1]["total_capital_rembourse"] - 20000
-    print(f"Capital restant au bout de un an: {capital_restant}")
-    nouveau_nb_echeances = int(calcul_nombre_echeances(capital_restant, float(rate)/100, int(payments_per_year), float(regular_payment)))
-
-    results = credit_integral(
-        capital_restant,
-        rate/100,
-        nouveau_nb_echeances,
-        payments_per_year
-    )
-
-    fig, ax = plt.subplots()
-    xy1 = [x['total_interet'] for x in results]
-    xy2 = [x['total_capital_rembourse'] for x in results]
-    lines = {
-      'interet': xy1,
-      'capital':xy2,
-    }
-
-
-    ax.stackplot([i for i in range(len(results))], lines.values(),
-                 labels=lines.keys(), alpha=0.8)
-    ax.legend(loc='upper left')
-    ax.set_title('Loan')
-    ax.set_xlabel('payments')
-    ax.set_ylabel('CAD')
-
-    plt.show()
-    """
-
-    return results
-
 
 if __name__ == "__main__":
 
