@@ -44,3 +44,5 @@ python compute.py --starting-capital 380000 --rate 2.44 --regular-payment 845 --
 ```
 
 Donc on peut dire dans cet exemple, qu'en payant en anticipé 20% du capital de départ (380000 / 5 = 76000) au premier anniversaire, alors on gagne 143 paiements (5 années et demi) et économise 43 kCAD de coût de crédit.
+
+![Figure_1.png](Figure_1.png) ![Figure_2.png](Figure_2.png)
