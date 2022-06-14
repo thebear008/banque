@@ -39,6 +39,7 @@ Options:
 python compute.py --starting-capital 380000 --rate 2.44 --regular-payment 845
 
 # second one: you will pay 441 times for a total of 450'00 CAD
+# because we chose to pay early 76kCAD the first anniversary
 python compute.py --starting-capital 380000 --rate 2.44 --regular-payment 845 --early-repayment-amount 76000 --early-repayment-time 26
 ```
 
