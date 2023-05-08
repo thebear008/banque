@@ -1,7 +1,6 @@
 from math import log
 import click
 import matplotlib.pyplot as plt
-from pprint import pprint
 
 
 def calcul_mensualite(montant, taux, echeances, diviseur=26):
@@ -9,9 +8,7 @@ def calcul_mensualite(montant, taux, echeances, diviseur=26):
 
 
 def calcul_nombre_echeances(montant, taux, diviseur, mensualite):
-    return -(log(1 - ((montant * taux) / (diviseur * mensualite)))) / (
-        log(1 + (taux / diviseur))
-    )
+    return -(log(1 - ((montant * taux) / (diviseur * mensualite)))) / (log(1 + (taux / diviseur)))
 
 
 def calcul_montant_restant(mensualite, echeances, taux, diviseur):
@@ -55,11 +52,7 @@ def credit_integral(
         total_interet += remboursement_interet
         total_capital_rembourse = total_paiement - total_interet
 
-        if (
-            montant_anticipe
-            and montant_anticipe_echeance
-            and montant_anticipe_echeance == compteur
-        ):
+        if montant_anticipe and montant_anticipe_echeance and montant_anticipe_echeance == compteur:
             total_capital_rembourse += montant_anticipe
             total_paiement += montant_anticipe
             echeances = int(
@@ -165,7 +158,10 @@ def compute_credit(
     }
 
     ax.stackplot(
-        [i for i in range(len(results))], lines.values(), labels=lines.keys(), alpha=0.8
+        [i for i in range(len(results))],
+        lines.values(),
+        labels=lines.keys(),
+        alpha=0.8,
     )
     ax.legend(loc="upper left")
     ax.set_title("Loan")
@@ -176,5 +172,4 @@ def compute_credit(
 
 
 if __name__ == "__main__":
-
     compute_credit()
